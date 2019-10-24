@@ -1,4 +1,0 @@
-import requests
-myrequest = requests.get("https://www.travel-advisory.info/api")
-datajson = myrequest.json(m)
-print("iso_alpha2"["VE"])

@@ -1,0 +1,51 @@
+import requests
+import tkinter as tk
+import webbrowser
+from os import path
+from tkinter import *
+
+def writeHTML(datajson):
+    ofile = open("IntlCountrySafetyDatabase.html","w")
+    ofile.write("<style> body { background-color: #d3d3d3; font-family: 'Courier New', Courier, monospace }  </style>")
+    ofile.write("<img src='http://swissinnovision.com/wp-content/uploads/2017/10/UN-Logo-660x330.jpg' alt='UN Logo'>")
+    ofile.write("<h1> International Country Safety Database (ICSD) </h1>")
+    namm = (datajson['data'][e1.get()]['name'])
+    ofile.write("Country Name: " + datajson['data'][e1.get()]['name'])
+    ofile.write("<br>")
+    ofile.write("<br>")
+    scorm = (datajson['data'][e1.get()]['advisory']['score'])
+    scormstring = str(scorm)
+    ofile.write("Threat Level (/5): " + scormstring)
+    ofile.write("<br>")
+    ofile.write("<br>")
+    ofile.write("<br>")
+    ofile.write("<p style = 'font-size: 18px'>" "Advisory:  " "</p>")
+    if scorm < 2.5:
+        ofile.write(namm + " is (relatively) safe to travel to.  Please take ordinary precautions while travelling.")
+    if scorm >= 2.5:
+        ofile.write("We advise that you take some caution while travelling to " + namm + ", and/or some parts of " + namm + ".")
+        ofile.write("<br>")
+    if scorm >=3.7:
+        ofile.write("<p style = 'color: red'>" "Please avoid and reconsider all travel to " + namm + "." "</p>")
+    ofile.close()
+
+def getAPI(*args):
+    text = e1.get()
+    myrequest = requests.get("https://www.travel-advisory.info/api?countrycode=" + text)
+    datajson = myrequest.json()
+    
+    if (myrequest.status_code == 200):
+        print(datajson['data'][text]['name'])
+        print(datajson['data'][text]['advisory']['score'])
+        writeHTML(datajson)
+    e1.delete(0,tk.END)
+    
+win = Tk()
+win.title("International Country Warning Widget")
+Label(win, text = "Please Enter an ISO 2-Letter Country Code Here: ").grid(row=0,column=0)
+e1 = Entry(win)
+e1.grid(row=0,column=1)
+
+b1 = tk.Button(text="Get Statistics",fg="red", command = getAPI)
+b1.grid(row=1,column=1)
+win.mainloop()
