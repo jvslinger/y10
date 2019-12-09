@@ -1,0 +1,168 @@
+<html>
+
+	<head>
+		<!-- Compiled and minified CSS -->
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    	<!-- Compiled and minified JavaScript -->
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<style>
+    		.nav-wrapper {
+    			background: #ff7043
+    		}
+    		.row {
+    			background: #e0e0e0
+    		}
+        .page-footer {
+          background: #ff7043;
+        }
+        .dropbtn {
+          background-color: #d55d20;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          right: 0;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #da0000;}
+        .dropdown:hover .dropdown-content {display: block;}
+        .dropdown:hover .dropbtn {background-color: #da0000;}
+
+    	</style>
+
+    	<script>
+			document.addEventListener('DOMContentLoaded', function() {
+    		var elems = document.querySelectorAll('.fixed-action-btn');
+    		var instances = M.FloatingActionButton.init(elems, options);
+  			});
+  			document.addEventListener('DOMContentLoaded', function() {
+    		var elems = document.querySelectorAll('.fixed-action-btn');
+    		var instances = M.FloatingActionButton.init(elems, {
+      		direction: 'left'
+    		});
+  			});
+		</script>
+
+	</head>
+
+	<body>
+
+		<nav>
+    		<div class="nav-wrapper">
+    		  	<a href="#" class="brand-logo">MotorCore</a>
+    		  	<ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="collapsible.html">Followed Forums</a></li>
+              <li><a href="collapsible.html">Account Settings</a></li>
+    		    	<li><a href="collapsible.html">Log In / Sign Up</a></li>
+    			</ul>
+    		</div>
+  		</nav>
+
+      <div class="row">
+      <div class="col s12 m6">
+          <div class="card grey darken-1c">
+            <div class="card-content white-text">
+              <span class="card-title">Cars n' Coffee Woodstock - EVENT</span>
+              <p>Cars n' Coffee is proud to present a new chapter in Woodstock, Ontario, Canada...</p>
+              <p>.</p>
+              <p>By: Jane Doenut</p>
+            </div>
+              <div class="card-action">
+                <a href="#">Read More</a>
+              </div>
+            </div>
+        </div>
+      </div>
+
+  		<div class="row">
+    	<div class="col s12 m6">
+      		<div class="card grey darken-1c">
+        		<div class="card-content white-text">
+          		<span class="card-title">Tesla CyberTruck Reveal</span>
+          		<p>The new Tesla Cybertruck literally shocked fans when our dignified Lord and Savior Elon Reeve Musk bestowed upon us his almightly new taser technology, powered by the solar-powered tonneau cover on the new CyberTruck!  This new technology...</p>
+              <p>.</p>
+              <p>By: John Doe</p>
+        		</div>
+        			<div class="card-action">
+          			<a href="#">Read More</a>
+        			</div>
+      			</div>
+    		</div>
+  		</div>
+
+  		<div class="row">
+    	<div class="col s12 m6">
+      		<div class="card grey darken-1c">
+        		<div class="card-content white-text">
+          		<span class="card-title">My New Honda</span>
+          		<p>In this post, I'll lay out why the Honda CR-Z is the best hybrid on the road.  It's sleek design, world-class hybrid...</p>
+              <p>.</p>
+              <p>By: Bob McBillyson</p>
+        		</div>
+        			<div class="card-action">
+          			<a href="#">Read More</a>
+        			</div>
+      			</div>
+    		</div>
+  		</div>
+
+      <div class="dropdown" style="float:right;">
+      <button class="dropbtn">Post to:</button>
+        <div class="dropdown-content">
+        <a href="#">Main</a>
+        <a href="#">Ford</a>
+        <a href="#">BMW</a>
+        </div>
+      </div>
+
+		  <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Post a Message:</h5>
+                <p class="grey-text text-lighten-5">Insert Text Box Here</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Type</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-5" href="#!">Article</a></li>
+                  <li><a class="grey-text text-lighten-5" href="#!">Event</a></li>
+                  <li><a class="grey-text text-lighten-5" href="#!">Personal</a></li>
+                  <li><a class="grey-text text-lighten-5" href="#!">Question</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 The College Programming Inc
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+	</body>
+
+</html>
